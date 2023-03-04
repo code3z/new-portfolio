@@ -34,12 +34,15 @@ export default function Home() {
         }}
       ></motion.div>
       <div
-        className="h-screen w-full flex flex-col items-center justify-center text-[#E7E7E7]"
+        className="h-screen w-full flex flex-col items-center justify-center text-neutral-200"
         ref={contactContainer}
       >
-        <h2 className="font-extrabold text-5xl sm:text-8xl text-center line-h leading-snug">
-          Let’s work together. <br /> (or just talk)
+        <h2 className="font-extrabold text-5xl sm:text-8xl text-center !leading-snug">
+          Let’s work together. <br />{" "}
         </h2>
+        <span className="font-extrabold text-4xl sm:text-7xl mt-6">
+          (or just talk)
+        </span>
         <a
           href="mailto:ian@ianc.me"
           target="_blank"
@@ -59,7 +62,7 @@ export default function Home() {
           <span
             className={clsx(
               linkHovered && "-translate-y-24",
-              `block transition-all duration-150 absolute top-0 left-0 w-full text-center`
+              `transition-all duration-150 absolute top-0 left-0 h-full w-full flex items-center justify-center`
             )}
           >
             Contact Me

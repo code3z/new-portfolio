@@ -3,7 +3,7 @@ import { ArrowUpRightIcon } from "@heroicons/react/24/outline"
 import clsx from "clsx"
 import { motion, useInView, useMotionTemplate, useScroll } from "framer-motion"
 import Link from "next/link"
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
 const roles = [
   {
@@ -108,60 +108,68 @@ export default function Experience() {
 
   const cardsScroll = useScroll({
     target: cardsRef,
-    offset: ["start start", "end center"],
+    offset: ["start start", "end 0.7"],
   })
   const isNotSm = useBreakpoint("sm")
 
   return (
     <>
       {/* 30vw is a good approximation for the amount of space the sun will take up */}
-      <div className="max-w-7xl mx-auto px-10 lg:pl-[30vw] xl:pl-[15vw] mt-[50vw]">
-        <h1 className="font-extrabold text-5xl md:text-7xl mb-14">
-          Experience
-        </h1>
-        <div ref={cardsRef}>
-          {roles.map((role, index) => (
-            <motion.div
-              style={{
-                transform: useMotionTemplate`translateY(calc(${cardsScroll.scrollYProgress} * ${index} * -6rem))`,
-              }}
-              key={role.org}
-            >
-              {/*a seperate div wrapper for motion allows for having a seperate transform property with no transition*/}
-              <div
-                className={clsx(
-                  index !== 0 && "-mt-64 sm:-mt-96",
-                  `relative transition-all duration-300 ease-in-out`,
-                  roles.length - 1 !== index && "sm:hover:-translate-y-14",
-                  typeof currentHoveredCard === "number" &&
-                    currentHoveredCard + 1 === index &&
-                    ` translate-y-10`, // make the card in front go down a bit
-                  !isNotSm &&
-                    typeof currentHoveredCard === "number" &&
-                    currentHoveredCard < index &&
-                    `translate-y-48`
-                )}
+      <div className="max-w-7xl mx-auto px-10 grid lg:grid-cols-[1fr_3fr] 2xl:grid-cols-[0fr_4fr] 2xl:pl-32 mt-[50vw] ">
+        <div />
+        <div>
+          <h1 className="font-extrabold text-5xl md:text-7xl mb-14">
+            Experience
+          </h1>
+          <div ref={cardsRef}>
+            {roles.map((role, index) => (
+              <motion.div
                 style={{
-                  marginLeft:
-                    isInView && isNotSm ? `calc(${index} * ${offset})` : "0px",
-                  width: `calc(100% - ${roles.length} * ${offset})`,
-                  zIndex: "0",
-                  transition:
-                    "all 300ms ease-in-out, margin-left 1s ease-in-out",
+                  transform: useMotionTemplate`translateY(calc(${cardsScroll.scrollYProgress} * ${index} * -6rem))`,
+                  pointerEvents: "none",
                 }}
-                onMouseOver={() => setCurrentHoveredCard(index)}
-                onMouseLeave={() => isNotSm && setCurrentHoveredCard(null)}
-                onClick={() => setCurrentHoveredCard(index)}
+                key={role.org}
               >
-                <RoleCardContent
-                  role={role}
-                  index={index}
-                  currentHoveredCard={currentHoveredCard}
-                />
-                <div className="bg-theme-red h-24 hidden sm:block"></div>
-              </div>
-            </motion.div>
-          ))}
+                {/*a seperate div wrapper for motion allows for having a seperate transform property with no transition*/}
+                <div
+                  className={clsx(
+                    index !== 0 && "-mt-64 sm:-mt-96",
+                    `relative transition-all duration-300 ease-in-out pointer-events-auto`,
+                    roles.length - 1 !== index && "sm:hover:-translate-y-14",
+                    typeof currentHoveredCard === "number" &&
+                      currentHoveredCard + 1 === index &&
+                      `translate-y-10`, // make the card in front go down a bit
+                    !isNotSm &&
+                      typeof currentHoveredCard === "number" &&
+                      currentHoveredCard < index &&
+                      `translate-y-60` // make all the cards in front go down a lot
+                  )}
+                  style={{
+                    marginLeft:
+                      isInView && isNotSm
+                        ? `calc(${index} * ${offset})`
+                        : "0px",
+                    width: isNotSm
+                      ? `calc(100% - ${roles.length} * ${offset})`
+                      : `100%`,
+                    zIndex: "0",
+                    transition:
+                      "all 300ms ease-in-out, margin-left 1s ease-in-out",
+                  }}
+                  onMouseOver={() => setCurrentHoveredCard(index)}
+                  onMouseLeave={() => setCurrentHoveredCard(null)}
+                  onClick={() => setCurrentHoveredCard(index)}
+                >
+                  <RoleCardContent
+                    role={role}
+                    index={index}
+                    currentHoveredCard={currentHoveredCard}
+                  />
+                  <div className="bg-theme-red h-24 hidden sm:block"></div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </>

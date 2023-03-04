@@ -20,7 +20,7 @@ export default function Cover() {
           }}
           viewBox="0 0 200 200"
           xmlns="http://www.w3.org/2000/svg"
-          className="h-[46rem] min-w-[46rem] rounded-full fill-off-white scale-y-90"
+          className="h-[52rem] min-w-[46rem] rounded-full fill-off-white scale-y-90"
         >
           <path
             d="

@@ -25,11 +25,15 @@ export default function About() {
     target: sunRef,
   })
   const [leftContainerWidth, setLeftContainerWidth] = useState(300)
+  const [leftContainerX, setLeftContainerX] = useState(30)
   useEffect(() => {
-    const listener = () =>
+    const listener = () => {
       setLeftContainerWidth(
         leftContainer.current?.getBoundingClientRect().width || 300
       )
+      setLeftContainerX(leftContainer.current?.getBoundingClientRect().x || 0)
+    }
+
     listener()
     window.addEventListener("resize", listener)
     return () => window.removeEventListener("resize", listener)
@@ -41,9 +45,7 @@ export default function About() {
     offset: ["start start", `${sunStickyDistance} start`],
     target: sunRef,
   })
-  const sunTranslate = useMotionTemplate`translateX(calc(-${leftContainerWidth}px * ${scrollYProgress} / 1.6 - ${
-    leftContainer.current?.getBoundingClientRect().x || 1
-  }px * ${scrollYProgress}))`
+  const sunTranslate = useMotionTemplate`translateX(calc(-${leftContainerWidth}px * ${scrollYProgress} / 1.6 - ${leftContainerX}px * ${scrollYProgress}))`
 
   return (
     <div className="grid gap-16 md:grid-cols-2 responsive-container mt-32">
@@ -93,7 +95,6 @@ export default function About() {
           }}
         >
           <motion.div
-            onClick={() => console.log(scrollYProgress.get())}
             ref={sunRef}
             style={{
               top: leftContainerWidth / -2,
@@ -105,7 +106,7 @@ export default function About() {
           </motion.div>
         </div>
       </div>
-      <div>
+      <div className="mt-4 lg:mt-12">
         <a
           href="https://github.com/code3z"
           target="_blank"
