@@ -20,3 +20,16 @@ body {
 .responsive-container {
   @apply max-w-7xl mx-auto px-6;
 }
+
+::selection {
+  @apply bg-light-yellow;
+}
+
+.bg-off-black ::selection,
+.dark-section ::selection {
+  @apply bg-dark-blue;
+}
+
+.selected-text-white ::selection {
+  @apply bg-off-white/80;
+}

@@ -78,9 +78,9 @@ const RoleCardContent = ({
           "opacity-0 translate-y-2"
       )}
     >
-      <div className="flex my-3 gap-3 flex-wrap">
+      <div className="flex my-3 gap-3 flex-wrap selected-text-white">
         {role.start && (
-          <div className="bg-yellow/80 p-1 px-3 rounded-full border-2 border-black w-fit font-semibold">
+          <div className="bg-light-yellow p-1 px-3 rounded-full border-2 border-black w-fit font-semibold">
             {role.start}
             {role.end && `—${role.end}`}
           </div>
@@ -89,7 +89,7 @@ const RoleCardContent = ({
           <a
             href={role.link}
             target="_blank"
-            className="bg-yellow/80 p-1 px-3 rounded-full border-2 border-black w-fit font-semibold"
+            className="bg-light-yellow p-1 px-3 rounded-full border-2 border-black w-fit font-semibold"
           >
             Go to {role.org}{" "}
             <ArrowUpRightIcon className="icon stroke-2 !w-3.5 !h-3.5" />

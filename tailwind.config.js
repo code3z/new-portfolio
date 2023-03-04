@@ -16,6 +16,7 @@ module.exports = {
         "dark-blue": "#474EA5",
         tan: "#A7917A",
         yellow: "#F5A00F",
+        "light-yellow": "#f2ae3b",
         "theme-red": "#E85539",
       },
       boxShadow: {

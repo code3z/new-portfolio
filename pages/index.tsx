@@ -34,7 +34,7 @@ export default function Home() {
         }}
       ></motion.div>
       <div
-        className="h-screen w-full flex flex-col items-center justify-center text-neutral-200"
+        className="h-screen w-full flex flex-col items-center justify-center text-neutral-200 dark-section"
         ref={contactContainer}
       >
         <h2 className="font-extrabold text-5xl sm:text-8xl text-center !leading-snug">
