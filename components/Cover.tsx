@@ -13,14 +13,14 @@ export default function Cover() {
   const arrowOpacity = useMotionTemplate`calc(1 - ${scrollYProgress} * 3)`
   return (
     <div ref={containerRef}>
-      <div className="fixed top-0 left-0 flex h-screen w-screen items-center justify-center bg-dark-blue -z-50">
+      <div className="fixed top-0 left-0 flex h-screen w-screen items-center justify-center bg-dark-blue -z-50 scale-x-[3] sm:scale-x-100">
         <motion.svg
           style={{
             scale,
           }}
           viewBox="0 0 200 200"
           xmlns="http://www.w3.org/2000/svg"
-          className="h-[52rem] min-w-[46rem] rounded-full fill-off-white scale-y-90"
+          className="h-[52rem] min-w-[40rem] sm:min-w-[46rem] rounded-full fill-off-white scale-y-90"
         >
           <path
             d="
@@ -43,8 +43,12 @@ export default function Cover() {
       </div>
       {/*w-full over w-screen prevents overflow due to scrollbar*/}
       <div className="flex flex-col text-center h-screen w-full items-center justify-center">
-        <h1 className="text-7xl font-extrabold mt-12">Ian Cheshire</h1>
-        <h2 className="text-5xl font-bold text-tan mt-3">Software Engineer</h2>
+        <h1 className="text-5xl sm:text-7xl font-extrabold mt-6 sm:mt-12">
+          Ian Cheshire
+        </h1>
+        <h2 className="text-3xl sm:text-5xl font-bold text-tan mt-3">
+          Software Engineer
+        </h2>
         <p className="font-semibold text-xl mt-6">Scroll Down</p>
         <motion.div
           className="text-xl animate-[bounce_1.5s_ease-in-out_infinite]"

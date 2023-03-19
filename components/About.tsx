@@ -1,8 +1,4 @@
-import Head from "next/head"
-import styles from "@/styles/Home.module.css"
 import { motion, useMotionTemplate, useScroll } from "framer-motion"
-import { ArrowSmallDownIcon } from "@heroicons/react/24/outline"
-import Cover from "@/components/Cover"
 import { Github } from "@/lib/icons"
 import Image from "next/image"
 import forster from "@/public/otto/forster.jpg"

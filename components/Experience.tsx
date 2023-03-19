@@ -23,7 +23,7 @@ const roles = [
     start: "July 2022",
     end: "October 2022",
     description:
-      "Over the summer, I interned at dots, a YC-backed community management startup making nocode tools for discord.",
+      "I interned at dots, a YC-backed community management startup making nocode tools for discord.",
     link: "https://dots.community",
     readMore: "https://ianc.me/dots",
   },
@@ -66,7 +66,7 @@ const RoleCardContent = ({
   index: number
   currentHoveredCard: number | null
 }) => (
-  <div className="h-96 border-off-black/70 border-4 p-5 bg-off-white">
+  <div className="min-h-[24rem] sm:h-96 border-off-black/70 border-4 p-5 bg-off-white">
     <h3 className="text-3xl font-bold">
       {role.title} [{role.adjective || "at"}] {role.org}
     </h3>
@@ -126,8 +126,8 @@ export default function Experience() {
 
   return (
     <>
-      {/* 30vw is a good approximation for the amount of space the sun will take up */}
-      <div className="max-w-7xl mx-auto px-10 grid lg:grid-cols-[1fr_3fr] 2xl:grid-cols-[0fr_4fr] 2xl:pl-32 mt-[50vw] ">
+      {/* 30vw is a good approximation for the amount of space the sun will take up                                          needs a pb on mobile so that the experience will not still be visible if a card is expanded and a user scrolls to contact*/}
+      <div className="max-w-7xl mx-auto px-10 grid lg:grid-cols-[1fr_3fr] 2xl:grid-cols-[0fr_4fr] 2xl:pl-32 mt-[50vw] pb-96 sm:pb-0">
         <div />
         <div>
           <h1 className="font-extrabold text-5xl md:text-7xl mb-14">
@@ -137,7 +137,9 @@ export default function Experience() {
             {roles.map((role, index) => (
               <motion.div
                 style={{
-                  transform: useMotionTemplate`translateY(calc(${cardsScroll.scrollYProgress} * ${index} * -6rem))`,
+                  transform: useMotionTemplate`translateY(calc(${
+                    cardsScroll.scrollYProgress
+                  } * ${index} * ${isNotSm ? 1 : 0} * -6rem))`,
                   pointerEvents: "none",
                 }}
                 key={role.org}
