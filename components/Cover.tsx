@@ -13,14 +13,15 @@ export default function Cover() {
   const arrowOpacity = useMotionTemplate`calc(1 - ${scrollYProgress} * 3)`
   return (
     <div ref={containerRef}>
-      <div className="fixed top-0 left-0 flex h-screen w-screen items-center justify-center bg-dark-blue -z-50 scale-x-[3] sm:scale-x-100">
+      <div className="fixed top-0 left-0 flex h-screen w-screen items-start sm:items-center justify-center bg-dark-blue -z-50 scale-y-[1.2] sm:scale-y-100">
+        <div className="sm:hidden bg-off-white w-full h-1/2 absolute bottom-0"></div>
         <motion.svg
           style={{
             scale,
           }}
           viewBox="0 0 200 200"
           xmlns="http://www.w3.org/2000/svg"
-          className="h-[52rem] min-w-[40rem] sm:min-w-[46rem] rounded-full fill-off-white scale-y-90"
+          className="h-[52rem] min-w-[46rem] rounded-full fill-off-white scale-y-90"
         >
           <path
             d="
