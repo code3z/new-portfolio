@@ -1,60 +1,11 @@
+import { roles } from "@/lib/roles"
 import { useBreakpoint } from "@/lib/useBreakpoint"
 import { ArrowUpRightIcon } from "@heroicons/react/24/outline"
 import clsx from "clsx"
 import { motion, useInView, useMotionTemplate, useScroll } from "framer-motion"
 import Link from "next/link"
-import { useEffect, useRef, useState } from "react"
+import { useRef, useState } from "react"
 
-const roles = [
-  {
-    title: "founder",
-    org: "Shareweave",
-    start: "January 2022",
-    end: "June 2022",
-    description:
-      "I founded a startup, which pivoted a few times and eventually ended up making a discord bot.",
-    page: "https://ianc.me/shareweave",
-    link: "https://shareweave.com",
-    readMore: "https://ianc.me/shareweave",
-  },
-  {
-    title: "swe intern",
-    org: "Dots (YC S21)",
-    start: "July 2022",
-    end: "October 2022",
-    description:
-      "I interned at dots, a YC-backed community management startup making nocode tools for discord.",
-    link: "https://dots.community",
-    readMore: "https://ianc.me/dots",
-  },
-  {
-    title: "helping out",
-    org: "AoTF",
-    description:
-      "I'm helping out with AoTF, a casual community of teenage founders. It's given me hands-on experience with community building.",
-    start: "July 2022",
-    end: "Present",
-    link: "https://lu.ma/aotf",
-  },
-  {
-    title: "creator",
-    org: "Quillfy",
-    adjective: "of",
-    start: "January 2023",
-    description:
-      "I created Quillfy, a simple GPT tool to get suggestions on writing.",
-    link: "https://quillfy.ianc.me",
-  },
-  {
-    title: "software engineer",
-    org: "Thirdbuy",
-    description:
-      "I'm a software engineer at Thirdbuy, a crypto startup increasing access to investments in developing countries.",
-    start: "November 2022",
-    end: "Present",
-    link: "https://thirdbuy.com",
-  },
-]
 const offset = "5%"
 
 const RoleCardContent = ({
@@ -96,14 +47,12 @@ const RoleCardContent = ({
           </a>
         )}
         {role.readMore && (
-          <a
+          <Link
             href={role.readMore}
-            target="_blank"
             className="p-1 px-3 rounded-full border-2 border-black w-fit font-semibold"
           >
             Read More
-            <ArrowUpRightIcon className="icon stroke-2 !w-3.5 !h-3.5" />
-          </a>
+          </Link>
         )}
       </div>
       <p className={`text-tan text-lg font-semibold`}>{role.description}</p>
