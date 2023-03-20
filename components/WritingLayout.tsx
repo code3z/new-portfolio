@@ -24,11 +24,9 @@ export default function WritingLayout({
         animate={{ x: 0, opacity: 1 }}
         exit={{ x: 100, opacity: 0 }}
       >
-        <div className="w-min">
-          <h1 className="text-7xl font-bold whitespace-nowrap">
-            {roleData?.org}
-          </h1>
-          <div className="bg-theme-red/90 w-full h-6 -mt-6" />
+        <div className="w-fit">
+          <h1 className="text-4xl sm:text-7xl font-bold">{roleData?.org}</h1>
+          <div className="bg-theme-red/90 w-full h-3 sm:h-6 -mt-3 sm:-mt-6" />
         </div>
         <p className="text-tan text-lg font-semibold mt-3 max-w-2xl">
           {roleData?.description}
@@ -40,7 +38,7 @@ export default function WritingLayout({
         animate={{ rotate: 0 }}
         exit={{ rotate: 90 * 2 }}
         transition={{ duration: 2 }}
-        className="absolute -bottom-48 -right-48 w-96 h-96"
+        className="-mb-64 lg:mb-0 mx-auto sm:-mr-48 lg:m-0 lg:absolute -bottom-48 -right-48 w-96 h-96"
       >
         <Image src={sun} alt="" className="" />
       </motion.div>
