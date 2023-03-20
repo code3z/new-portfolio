@@ -26,7 +26,7 @@ export default function WritingLayout({
       >
         <div className="w-min">
           <h1 className="text-7xl font-bold whitespace-nowrap">
-            {roleData?.title} {roleData?.adjective || "at"} {roleData?.org}
+            {roleData?.org}
           </h1>
           <div className="bg-theme-red/90 w-full h-6 -mt-6" />
         </div>
