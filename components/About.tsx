@@ -56,7 +56,7 @@ export default function About() {
         <div className="bg-gray-200 pt-8 md:pt-12 pb-6 px-8 font-medium space-y-4 text-md text-neutral-700">
           <p>
             I’m a software engineer, aspiring entrepreneur, and high school
-            sophmore.
+            sophomore.
           </p>
           <p>
             I’ve been working with startups for a year and with code since I was
