@@ -1,17 +1,18 @@
-import { roles } from "@/lib/roles"
-import sun from "@/public/sun.svg"
-import { motion } from "framer-motion"
-import Head from "next/head"
-import Image from "next/image"
+import { roles } from "@/lib/roles";
+import sun from "@/public/sun.svg";
+import { motion } from "framer-motion";
+import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function WritingLayout({
   children,
   role,
 }: {
-  children: React.ReactNode
-  role: string
+  children: React.ReactNode;
+  role: string;
 }) {
-  const roleData = roles.find((r) => r.key === role)
+  const roleData = roles.find((r) => r.key === role);
 
   return (
     <div className="relative overflow-hidden min-h-screen">
@@ -19,12 +20,31 @@ export default function WritingLayout({
         <title>{roleData?.org} | Ian Cheshire&apos;s portfolio</title>
       </Head>
       <motion.div
-        className="responsive-container mt-16"
+        className="responsive-container mt-7"
         initial={{ x: 100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         exit={{ x: 100, opacity: 0 }}
       >
-        <div className="w-fit">
+        <Link href="/">
+          <svg
+            data-slot="icon"
+            aria-hidden="true"
+            fill="none"
+            className="icon mr-2"
+            stroke-width="2"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+          </svg>
+          Go Back
+        </Link>
+        <div className="w-fit mt-8">
           <h1 className="text-4xl sm:text-7xl font-bold">{roleData?.org}</h1>
           <div className="bg-theme-red/90 w-full h-3 sm:h-6 -mt-3 sm:-mt-6" />
         </div>
@@ -43,5 +63,5 @@ export default function WritingLayout({
         <Image src={sun} alt="" className="" />
       </motion.div>
     </div>
-  )
+  );
 }

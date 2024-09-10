@@ -35,6 +35,7 @@ export function useBreakpoint(
       const value = config.theme.screens[breakpoint] ?? "999999px"
       const query = window.matchMedia(`(min-width: ${value})`)
       matchRef.current = query.matches
+      console.log(query.matches, breakpoint)
       if (matchRef.current != match) {
         setMatch(matchRef.current)
       }

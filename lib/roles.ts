@@ -23,33 +23,51 @@ export const roles = [
   },
   {
     key: "aotf",
-    title: "helping out",
+    title: "helping",
     org: "AoTF",
     description:
-      "I'm helping out Jai Relan with AoTF, a casual community of teenage founders. It's given me hands-on experience with community building.",
+      "I'm helping to create a community of teenage founders; co-organized a teen founder demo day.",
     start: "July 2022",
-    end: "Present",
-    link: "https://lu.ma/aotf",
-  },
-  {
-    key: "quillfy",
-    title: "creator",
-    org: "Quillfy",
-    adjective: "of",
-    start: "January 2023",
-    description:
-      "I created Quillfy, a simple GPT tool to get suggestions on writing.",
-    link: "https://quillfy.ianc.me",
+    end: "May 2023",
+    link: "https://teenfounders.vercel.app",
   },
   {
     key: "thirdbuy",
     title: "software engineer",
     org: "Thirdbuy",
     description:
-      "I'm a software engineer at Thirdbuy, a crypto startup increasing access to investments in developing countries.",
+      "I was a software engineer at Thirdbuy, a crypto startup increasing access to investments in developing countries.",
     start: "November 2022",
-    end: "Present",
+    end: "April 2023",
     link: "https://thirdbuy.com",
     readMore: "/thirdbuy",
   },
+  {
+    key: "colearn",
+    title: "growth engineer",
+    org: "Colearn",
+    description: "I'm doing a combination of coding and growth at Colearn, an online charter school enabling personalized education.",
+    start: "May 2023",
+    end: "Present",
+    link: "https://www.colearn.com",
+  },
+  {
+    key: "cadmus",
+    title: "co-founder",
+    org: "Cadmus",
+    description: "Developed & taught a 6-week, pay-what-you-wish Python course to middle schoolers",
+    start: "March 2024",
+    end: "May 2024",
+    link: "https://cadmuslearning.com/",
+  },
+  {
+    key: "thegrant",
+    title: "many jobs",
+    org: "Grant & Co",
+    description: "Internship in Nairobi (+ remote work before), worked on https://sunlight.reviews and other projects.",
+    start: "March 2024",
+    end: "July 2024",
+    link: "https://thegrant.co",
+    readMore: "/kenya"
+  }
 ]

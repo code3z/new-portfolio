@@ -1,47 +1,47 @@
-import { motion, useMotionTemplate, useScroll } from "framer-motion"
-import { Github } from "@/lib/icons"
-import Image from "next/image"
-import forster from "@/public/otto/forster.jpg"
-import gatspiel from "@/public/otto/gastspiel.jpg"
-import montreux from "@/public/otto/montreux.jpg"
-import sun from "@/public/sun.svg"
-import { useEffect, useRef, useState } from "react"
+import { motion, useMotionTemplate, useScroll } from "framer-motion";
+import { Github } from "@/lib/icons";
+import Image from "next/image";
+import forster from "@/public/otto/forster.jpg";
+import gatspiel from "@/public/otto/gastspiel.jpg";
+import montreux from "@/public/otto/montreux.jpg";
+import sun from "@/public/sun.svg";
+import { useEffect, useRef, useState } from "react";
 
 const info: Record<string, string> = {
-  "Current Position": "Software Engineer",
-  Company: "Thirdbuy",
-  Location: "East Coast USA (EST)",
-}
+  "Current Projects": "Enjoying senior year, learning Swahili, applying to college, running & lifting",
+  "Now Watching": "Breaking Bad, Volume",
+  Location: "Philadelphia USA (EST)",
+};
 
 export default function About() {
-  const sunRef = useRef<HTMLDivElement>(null)
-  const leftContainer = useRef<HTMLDivElement>(null)
+  const sunRef = useRef<HTMLDivElement>(null);
+  const leftContainer = useRef<HTMLDivElement>(null);
   const { scrollYProgress, scrollY } = useScroll({
     offset: ["30vh end", "end start"],
     target: sunRef,
-  })
-  const [leftContainerWidth, setLeftContainerWidth] = useState(300)
-  const [leftContainerX, setLeftContainerX] = useState(30)
+  });
+  const [leftContainerWidth, setLeftContainerWidth] = useState(300);
+  const [leftContainerX, setLeftContainerX] = useState(30);
   useEffect(() => {
     const listener = () => {
       setLeftContainerWidth(
         leftContainer.current?.getBoundingClientRect().width || 300
-      )
-      setLeftContainerX(leftContainer.current?.getBoundingClientRect().x || 0)
-    }
+      );
+      setLeftContainerX(leftContainer.current?.getBoundingClientRect().x || 0);
+    };
 
-    listener()
-    window.addEventListener("resize", listener)
-    return () => window.removeEventListener("resize", listener)
-  }, [])
-  const sunStickyDistance = "200vh"
+    listener();
+    window.addEventListener("resize", listener);
+    return () => window.removeEventListener("resize", listener);
+  }, []);
+  const sunStickyDistance = "200vh";
   const sunScroll2 = useScroll({
     // this range starts at the intersection of the end of the sun's original place and 1/3 down the viewport,
     // and ends a full viewport after the sun's original place
     offset: ["start start", `${sunStickyDistance} start`],
     target: sunRef,
-  })
-  const sunTranslate = useMotionTemplate`translateX(calc(-${leftContainerWidth}px * ${scrollYProgress} / 1.6 - ${leftContainerX}px * ${scrollYProgress}))`
+  });
+  const sunTranslate = useMotionTemplate`translateX(calc(-${leftContainerWidth}px * ${scrollYProgress} / 1.6 - ${leftContainerX}px * ${scrollYProgress}))`;
 
   return (
     <div className="grid gap-16 md:grid-cols-2 responsive-container mt-32">
@@ -56,21 +56,21 @@ export default function About() {
         <div className="bg-gray-200 pt-8 md:pt-12 pb-6 px-8 font-medium space-y-4 text-md text-neutral-700">
           <p>
             I’m a software engineer, aspiring entrepreneur, and high school
-            sophomore.
+            senior.
           </p>
           <p>
-            I’ve been working with startups for a year and with code since I was
-            10. I’m also a boy scout and I love being outdoors.
+            I’ve been working with startups for 2 years and with code since I
+            turned 11. I’m also a boy scout and I love being outdoors.
           </p>
           <p>
             I’m fascinated by the problems that people face. How can we reduce
             the wealth gap? Why are there still people living on $2 a day? How
             can public education actually be effective? How can we stop climate
-            change without needing great sacrifices from the population? How can
-            I do more work in less time? A lot of problems can, in some way, be
-            solved by technology. When I was little, I imagined doing something
-            BIG as an adult - maybe I could build a city in the sky. Now, I can
-            do something BIG with technology.
+            change without great sacrifices? How can I do more work in less
+            time? A lot of problems can, in some way, be solved by technology.
+            When I was little, I imagined doing something BIG as an adult - I
+            imagined building a city in the sky, powered by helicopter blades.
+            Now, I can do something BIG with technology.
           </p>
         </div>
         <div className="bg-off-black p-8 space-y-4">
@@ -130,5 +130,5 @@ export default function About() {
         </div>
       </div>
     </div>
-  )
+  );
 }

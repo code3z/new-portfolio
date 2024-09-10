@@ -6,8 +6,6 @@ import { motion, useInView, useMotionTemplate, useScroll } from "framer-motion"
 import Link from "next/link"
 import { useRef, useState } from "react"
 
-const offset = "5%"
-
 const RoleCardContent = ({
   role,
   index,
@@ -18,8 +16,8 @@ const RoleCardContent = ({
   currentHoveredCard: number | null
 }) => (
   <div className="min-h-[24rem] sm:h-96 border-off-black/70 border-4 p-5 bg-off-white">
-    <h3 className="text-3xl font-bold">
-      {role.title} [{role.adjective || "at"}] {role.org}
+    <h3 className="text-2xl md:text-3xl font-bold">
+      {role.title} [{"at"}] {role.org}
     </h3>
     <div
       className={clsx(
@@ -73,6 +71,10 @@ export default function Experience() {
   })
   const isNotSm = useBreakpoint("sm")
 
+  const isNotXl = useBreakpoint("xl")
+
+  const offset = isNotXl ? "5%" : "2%"
+
   return (
     <>
       {/* 30vw is a good approximation for the amount of space the sun will take up                                          needs a pb on mobile so that the experience will not still be visible if a card is expanded and a user scrolls to contact*/}
@@ -98,7 +100,7 @@ export default function Experience() {
                   className={clsx(
                     index !== 0 && "-mt-64 sm:-mt-96",
                     `relative transition-all duration-300 ease-in-out pointer-events-auto`,
-                    roles.length - 1 !== index && "sm:hover:-translate-y-14",
+                    roles.length - 1 !== index && "sm:hover:-translate-y-20",
                     typeof currentHoveredCard === "number" &&
                       currentHoveredCard + 1 === index &&
                       `translate-y-10`, // make the card in front go down a bit
