@@ -65,7 +65,7 @@ export const roles = [
     title: "many jobs",
     org: "Grant & Co",
     description: "Internship in Nairobi (+ remote work before), worked on https://sunlight.reviews and other projects.",
-    start: "March 2024",
+    start: "February 2024",
     end: "July 2024",
     link: "https://thegrant.co",
     readMore: "/kenya"

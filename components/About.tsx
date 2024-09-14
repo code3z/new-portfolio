@@ -8,7 +8,7 @@ import sun from "@/public/sun.svg";
 import { useEffect, useRef, useState } from "react";
 
 const info: Record<string, string> = {
-  "Current Projects": "Enjoying senior year, learning Swahili, applying to college, running & lifting",
+  "Current Projects": "Enjoying senior year, learning Swahili, lifting",
   "Now Watching": "Breaking Bad, Volume",
   Location: "Philadelphia USA (EST)",
 };
