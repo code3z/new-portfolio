@@ -53,7 +53,7 @@ const RoleCardContent = ({
           </Link>
         )}
       </div>
-      <p className={`text-tan text-lg font-semibold`}>{role.description}</p>
+      <p className={`text-tan text-lg font-semibold`} dangerouslySetInnerHTML={{ __html: role.description }}></p>
     </div>
   </div>
 )
