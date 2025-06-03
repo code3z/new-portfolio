@@ -48,9 +48,10 @@ export default function WritingLayout({
           <h1 className="text-4xl sm:text-7xl font-bold">{roleData?.org}</h1>
           <div className="bg-theme-red/90 w-full h-3 sm:h-6 -mt-3 sm:-mt-6" />
         </div>
-        <p className="text-tan text-lg font-semibold mt-3 max-w-2xl">
-          {roleData?.description}
-        </p>
+        <p
+  className="text-tan text-lg font-semibold mt-3 max-w-2xl"
+  dangerouslySetInnerHTML={{ __html: roleData?.description || '' }}
+></p>
         <div className="mt-3 prose pb-16">{children}</div>
       </motion.div>
       <motion.div
