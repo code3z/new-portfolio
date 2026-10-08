@@ -8,9 +8,9 @@ import sun from "@/public/sun.svg";
 import { useEffect, useRef, useState } from "react";
 
 const info: Record<string, string> = {
-  "Current Projects": "Enjoying senior year, learning Swahili, lifting",
-  "Now Watching": "Breaking Bad, Volume",
-  Location: "Philadelphia USA (EST)",
+  "Current Projects": "Building ChatARV, lifting, jiu jitsu",
+  "Now Watching": "Better Call Saul",
+  Location: "Philadelphia / Nairobi",
 };
 
 export default function About() {
@@ -55,12 +55,11 @@ export default function About() {
         </h1>
         <div className="bg-gray-200 pt-8 md:pt-12 pb-6 px-8 font-medium space-y-4 text-md text-neutral-700">
           <p>
-            I’m a software engineer, aspiring entrepreneur, and high school
-            senior.
+            I’m a software engineer and entrepreneur.
           </p>
           <p>
-            I’ve been working with startups for 2 years and with code since I
-            turned 11. I’m also a boy scout and I love being outdoors.
+            I’ve been working with startups for 4 years and with code since I
+            turned 12. I’m also a runner and I love being outdoors.
           </p>
           <p>
             I’m fascinated by the problems that people face. How can we reduce
