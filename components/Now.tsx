@@ -19,7 +19,7 @@ export default function Now() {
               <a
                 href="https://chatarv.ai"
                 target="_blank"
-                className="bg-off-white text-off-black p-1 px-3 rounded-full border-2 border-off-white w-fit font-semibold hover:bg-transparent hover:text-off-white transition-colors duration-100"
+                className="bg-off-white text-off-black p-1 px-3 rounded-full border-2 border-off-white w-fit font-semibold hover:bg-light-yellow hover:border-light-yellow transition-colors duration-200"
               >
                 Visit chatarv.ai{" "}
                 <ArrowUpRightIcon className="icon stroke-2 !w-3.5 !h-3.5" />
