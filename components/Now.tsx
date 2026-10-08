@@ -27,7 +27,7 @@ export default function Now() {
             </div>
             <div className="w-fit mt-8">
               <h2 className="text-5xl sm:text-8xl font-extrabold">ChatARV</h2>
-              <div className="bg-theme-red/90 w-full h-3 sm:h-6 -mt-3 sm:-mt-6" />
+              <div className="bg-light-yellow/90 w-full h-3 sm:h-6 -mt-3 sm:-mt-6" />
             </div>
             <p className="text-2xl sm:text-3xl font-bold mt-6">
               Property comps and offers, 10x faster.
