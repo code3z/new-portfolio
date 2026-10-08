@@ -1,7 +1,7 @@
 import { ArrowUpRightIcon } from "@heroicons/react/24/outline"
 import clsx from "clsx"
 
-const steps = ["Enter an address", "AI picks the top 6 comps", "Set your offer"]
+const steps = ["Enter an address", "AI picks the top 6 comps", "Send an offer"]
 
 export default function Now() {
   return (
@@ -33,10 +33,9 @@ export default function Now() {
               Property comps and offers, 10x faster.
             </p>
             <p className="text-off-white/80 text-lg font-medium mt-4 max-w-2xl">
-              I’m building an AI tool for real estate investors. Type in an
-              address and ChatARV finds the best comparable sales, estimates the
-              after-repair value, and helps you set an offer, all in about a
-              minute.
+              I’m building an AI tool to automate the deal analysis real estate
+              investors used to do by hand. We launched in March 2025 and scaled
+              to 1,000 active paying users.
             </p>
           </div>
           <div className="grid sm:grid-cols-3 border-t-2 border-off-white/20">
