@@ -1,6 +1,7 @@
 import Head from "next/head"
 import Cover from "@/components/Cover"
 import About from "@/components/About"
+import Now from "@/components/Now"
 import Experience from "@/components/Experience"
 import { motion, useScroll } from "framer-motion"
 import { useRef, useState } from "react"
@@ -26,6 +27,7 @@ export default function Home() {
       </Head>
       <Cover />
       <About />
+      <Now />
       <Experience />
       <motion.div
         className="h-full w-full bg-off-black pointer-events-none fixed top-0 left-0 -z-10"

@@ -78,7 +78,7 @@ export default function Experience() {
   return (
     <>
       {/* 30vw is a good approximation for the amount of space the sun will take up                                          needs a pb on mobile so that the experience will not still be visible if a card is expanded and a user scrolls to contact*/}
-      <div className="max-w-7xl mx-auto px-10 grid lg:grid-cols-[1fr_3fr] 2xl:grid-cols-[0fr_4fr] 2xl:pl-32 mt-[50vw] pb-96 sm:pb-0">
+      <div className="max-w-7xl mx-auto px-10 grid lg:grid-cols-[1fr_3fr] 2xl:grid-cols-[0fr_4fr] 2xl:pl-32 mt-32 pb-96 sm:pb-0">
         <div />
         <div>
           <h1 className="font-extrabold text-5xl md:text-7xl mb-14">
