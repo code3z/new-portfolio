@@ -1,10 +1,10 @@
-import create, {
-  useIsomorphicEffect,
-} from "@kodingdotninja/use-tailwind-breakpoint"
 import resolveConfig from "tailwindcss/resolveConfig"
 
 import tailwindConfig from "@/tailwind.config.js"
-import { useRef, useState } from "react"
+import { useEffect, useLayoutEffect, useRef, useState } from "react"
+
+const useIsomorphicEffect =
+  typeof window !== "undefined" ? useLayoutEffect : useEffect
 
 const config = resolveConfig(tailwindConfig)
 if (!config.theme) throw new Error("No theme found in tailwind config")
